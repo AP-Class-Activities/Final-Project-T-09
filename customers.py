@@ -1,13 +1,98 @@
-class login:
-    def __init__(self, username, usremail)
-        self.name = username
-        self.email = usremail
-    def display(self):
-        print(self.name, self.email)
-    def sendemail(self):
-        print("we will send you an email.")
-    def verify(self):
-        print("we will verify your email.")
+'''
+
+Usage:
+   1) Create a new customer:
+        t= Customer(ID, name, family , address, phone, degree)
+
+   2) Print the teacher information:    
+        print(t)
+
+    
+'''
+#add year of birth
+
+class Customer: 
+    def __init__(self, id, name, family, address, phone, sex):
+        self.__id = id
+        self.__name = name
+        self.__family = family
+        self.__address = address
+        self.__phone = phone
+
+        if sex not in ['male', 'female']: 
+            raise ValueError('the value of sex should be [male or female] ')
+        self.__sex = sex
+
+    
+    #setters and getters
+    @property
+    def ID(self): 
+        return self.__id
+    
+    @ID.setter
+    def ID(self,value): 
+        self.__id = value
+
+    @property
+    def name(self): 
+        return self.__name
+
+    @name.setter
+    def name(self,value): 
+        self.__name = value
+
+    @property
+    def family(self): 
+        return self.__family
+
+    @family.setter
+    def family(self,value): 
+        self.__family = value
+
+    @property
+    def address(self): 
+        return self.__address
+    
+    @address.setter
+    def address(self,value): 
+        self.__address = value
+
+    @property
+    def phone(self): 
+        return self.__phone
+
+    @phone.setter
+    def phone(self,value): 
+        self.__phone = value
+
+    @property
+    def sex(self): 
+        return self.__sex
+
+    @sex.setter
+    def sex(self,value): 
+        if value not in ['male', 'female']: 
+            raise ValueError('the value of sex should be [male or female] ')
+        self.__sex = value
+
+
+
+
+    def __str__(self): 
+        return 'ID: {}   name: {} {}    address: {}   phone: {}     sex: {}   '  .format(self.ID,self.name, self.family, self.address, self.phone, self.sex)
+
+
+
+
+#client code:
+c = Customer(123, 'ali', 'alipour', 'Guilan, Rasht', '09112383822', 'male' )
+print(c)
+
+
+
+
+
+
 class productsList:
     def __init__(self, roduct = " ", storage = 0, price = 0.0):
         self.product = product
