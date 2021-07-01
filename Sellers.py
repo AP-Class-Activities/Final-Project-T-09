@@ -121,8 +121,8 @@ class Seller:
 
 
     def __str__(self): 
-        return 'ID: {}   name: {} {}    andress: {}   phone: {}   major: {}   sex: {}    year: {}'\
-            .format(self.ID,self.name, self.family, self.address, self.phone, self.major, self.sex, self.year)
+        return 'ID: {}   name: {} {}    address: {}   phone: {}   sex: {}    year: {}    email:{}    password:{}'\
+            .format(self.ID,self.name, self.family, self.address, self.phone, self.sex, self.year, self.email, self.password)
 
 
 
